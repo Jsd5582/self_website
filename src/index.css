@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", "Georgia", serif;
+
+  /* Midnight Studio Palette */
+  --color-brand-primary: #ffffff;
+  --color-brand-secondary: #94a3b8; /* slate-400 */
+  --color-brand-accent: #8b5cf6; /* Vibrant Violet */
+  --color-brand-accent-glow: rgba(139, 92, 246, 0.3);
+  --color-surface-dark: #020617; /* Slate-950 */
+  --color-surface-aside: #030712;
+  --color-surface-card: #0f172a;
+  --color-surface-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-surface-dark text-slate-400 font-sans antialiased selection:bg-brand-accent selection:text-white;
+  }
+  
+  h1, h2, h3, .font-display {
+    @apply font-serif italic text-white;
+  }
+}
+
+@layer components {
+  .studio-card {
+    @apply bg-surface-card/40 backdrop-blur-sm border border-surface-border p-8 rounded-3xl transition-all duration-500 hover:border-brand-accent/40;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
